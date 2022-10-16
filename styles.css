@@ -1,0 +1,110 @@
+body {
+    height: 100vh;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+.lose {
+    z-index: 3;
+    position: fixed;
+    
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.726);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lose button  {
+    font-size: 50px;
+    border-radius: 10px;
+    border: none;
+    padding: 30px 40px;
+    background-color: rgb(11, 39, 0);
+    color: white;
+}
+
+
+
+.snake {
+    --y: 40;
+    --x: 40;
+
+    left: calc(var(--x) * 1px);
+    top: calc(var(--y) * 1px);
+
+    z-index: 2;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(23, 156, 6);
+    position: absolute;
+}
+
+
+.tail {
+    --y: 0;
+    --x: 0;
+
+    left: calc(var(--x) * 1px);
+    top: calc(var(--y) * 1px);
+
+    z-index: 2;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(22, 187, 0);
+    position: absolute;
+}
+
+.apple {
+
+    --y: 40;
+    --x: 80;
+
+    left: calc(var(--x) * 1px);
+    top: calc(var(--y) * 1px);
+
+    z-index: 1;
+    height: 40px;
+    width: 40px;
+    background-color: red;
+    position: absolute;
+}
+
+
+.game {
+    position: relative;
+    --size: calc(15 * 40px);
+    width: var(--size);
+    height: var(--size);
+    background-color: black;
+
+    display: grid;
+    grid-template-columns: repeat(15,  1fr);
+    grid-template-rows: repeat(15,  1fr);
+}
+
+.square1 {
+    background-color: rgb(13, 29, 0);
+    width: 40px;
+    height: 40px;
+}
+
+.square2 {
+    background-color: rgb(11, 39, 0);
+    width: 40px;
+    height: 40px;
+}
